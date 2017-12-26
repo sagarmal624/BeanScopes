@@ -44,6 +44,9 @@ If same scoped beans are wired together there's no problem. For example a single
 
 To understand the problem let's see an example. We are going to have two beans MyPrototypeBean, scoped as prototype and MySingletonBean, scoped as singleton. We will inject the prototype bean into the singleton bean. We will also access MySingletonBean via method call context#getBean(MySingletonBean.class) multiple times. We are expecting (per prototype specifications) that a new prototype bean will be created and be injected into MySingletonBean every time.
 
+That means there's only one instance of the prototype bean within the singleton bean. Well, a prototype bean should not behave that way. There should be a new instance every time.
+
+The problem is: spring container only creates the singleton bean MySingletonBean once, and thus only gets one opportunity to inject the dependencies into it. The container cannot provide MySingletonBean with a new instance of  MyPrototypeBean every time one is needed.
 
 To solve this problem i autowired the applicaion context in singelton bean and get bean of protoyoe type into singleton
 You can also do using provider...
@@ -84,3 +87,4 @@ public class UserService {
     }
 }
 ```
+
