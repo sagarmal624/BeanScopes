@@ -44,3 +44,43 @@ If same scoped beans are wired together there's no problem. For example a single
 
 To understand the problem let's see an example. We are going to have two beans MyPrototypeBean, scoped as prototype and MySingletonBean, scoped as singleton. We will inject the prototype bean into the singleton bean. We will also access MySingletonBean via method call context#getBean(MySingletonBean.class) multiple times. We are expecting (per prototype specifications) that a new prototype bean will be created and be injected into MySingletonBean every time.
 
+
+To solve this problem i autowired the applicaion context in singelton bean and get bean of protoyoe type into singleton
+You can also do using provider...
+here is the way to get bean from provider....
+```java
+
+public class UserService {
+    private String name;
+    private String email;
+    private Integer age;
+    @Autowired
+    private Provider<Address> provider;
+
+
+    public Address getAddress() {
+        Address address = provider.get();
+        return address;
+    }
+}
+
+```
+
+here is the way to get bean from application context....
+
+
+```java
+public class UserService {
+    private String name;
+    private String email;
+    private Integer age;
+    @Autowired
+    private ApplicationContext context;
+
+
+    public Address getAddress() {
+        Address address = (Address) context.getBean("address");
+        return address;
+    }
+}
+```
