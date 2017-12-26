@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+>
+
+    <bean name="userService" class="com.sagarandcompany.BeanScopes.PrototypeIntoSingletonProblem.UserService">
+        <property name="name" value="Sagar"/>
+        <property name="email" value="Sagarmal624@gmail.com"/>
+        <property name="age" value="25"/>
+    </bean>
+    <!--<bean name="userService1" class="com.sagarandcompany.BeanScopes.UserService">-->
+    <!--<property name="name" value="SagarAndCompany"/>-->
+    <!--<property name="email" value="admin@sagarandcompany.com "/>-->
+    <!--<property name="age" value="25"/>-->
+    <!--<property name="address" ref="address"/>-->
+    <!--</bean>-->
+
+    <bean name="address" class="com.sagarandcompany.BeanScopes.PrototypeIntoSingletonProblem.Address" scope="prototype">
+        <property name="city" value="High Tech City"/>
+        <property name="district" value="banglore"/>
+    </bean>
+
+    <context:annotation-config/>
+
+</beans>
