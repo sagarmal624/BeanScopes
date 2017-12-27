@@ -36,11 +36,17 @@ To define scope of bean in xml we have scope attribute of bean tag. like
 
 @PrototypeScope
 
+
+# Everything in Singleton Scope
 ![alt text](https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/singleton.png)
+
+
+![alt text](http://res.cloudinary.com/sagarandcompany/image/upload/v1514262023/singleton_nobizl.png)
+
+# Inside Bean is Prototype Scope but outside is Single Bean 
 
 ![alt text](https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/prototype.png)
 
-![alt text](http://res.cloudinary.com/sagarandcompany/image/upload/v1514262023/singleton_nobizl.png)
 
 
 
