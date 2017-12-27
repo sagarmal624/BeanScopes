@@ -36,7 +36,13 @@ To define scope of bean in xml we have scope attribute of bean tag. like
 
 @PrototypeScope
 
+![alt text](https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/singleton.png)
+
+![alt text](https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/prototype.png)
+
 ![alt text](http://res.cloudinary.com/sagarandcompany/image/upload/v1514262023/singleton_nobizl.png)
+
+
 
 # Spring - Injecting a Prototype Bean into a Singleton Bean Problem
 
